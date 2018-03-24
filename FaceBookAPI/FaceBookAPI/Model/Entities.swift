@@ -14,14 +14,14 @@ struct Entitites{
     let schoolName: String
     let collegeName: String
     let collegeCource: String
-
+    
     init(fields: JSON){
-        self.id = fields["id"].string ?? "742056515858366"
-        self.name = fields["name"].string!
+        self.id = fields["id"].string ?? ""
+        self.name = fields["name"].string ?? ""
         self.birthDay = fields["birthday"].string ?? "-------"
         self.schoolName = fields["education"][0]["school"]["name"].string ?? "-------"
         self.collegeName = fields["education"][1]["school"]["name"].string ?? "-------"
         self.collegeCource = fields["education"][1]["concentration"][0]["name"].string ?? "-------"
-
     }
 }
+

@@ -9,68 +9,101 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="KohinoorTelugu.ttc">
+            <string>KohinoorTelugu-Regular</string>
+        </array>
+        <array key="SnellRoundhand.ttc">
+            <string>SnellRoundhand-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FaceBookAPI" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvH-m6-eDS">
+                                <rect key="frame" x="0.0" y="58" width="375" height="609"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HU1-e9-BYc">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AAz-Gg-g4I">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.18746611475944519" green="0.28535363078117371" blue="0.4914817214012146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgo-Km-a9f">
-                                <rect key="frame" x="75" y="403" width="225" height="20"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <rect key="frame" x="67.5" y="423" width="240" height="30.5"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxk-By-1qV">
-                                <rect key="frame" x="75" y="442.5" width="225" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="67.5" y="473" width="240" height="22.5"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ukp-Cp-nHa">
-                                <rect key="frame" x="75" y="148" width="225" height="220"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ukp-Cp-nHa">
+                                <rect key="frame" x="67.5" y="148" width="240" height="240"/>
+                                <color key="backgroundColor" red="0.67315554618835449" green="0.71343296766281128" blue="0.79576104879379272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="225" id="BZQ-XY-KZe"/>
-                                    <constraint firstAttribute="height" constant="220" id="orJ-3w-Qlg"/>
+                                    <constraint firstAttribute="width" constant="240" id="BZQ-XY-KZe"/>
+                                    <constraint firstAttribute="height" constant="240" id="orJ-3w-Qlg"/>
                                 </constraints>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLo-dx-QwQ">
-                                <rect key="frame" x="75" y="482.5" width="225" height="19.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="67.5" y="515.5" width="240" height="22.5"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="College Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCU-uk-zUi">
-                                <rect key="frame" x="75" y="522" width="225" height="19.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="67.5" y="558" width="240" height="22.5"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPU-me-IvP">
-                                <rect key="frame" x="75" y="561.5" width="225" height="19.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="67.5" y="600.5" width="240" height="22.5"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyh-t2-mO3">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyh-t2-mO3" userLabel="Header">
                                 <rect key="frame" x="0.0" y="20" width="375" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQT-Od-WHD">
-                                        <rect key="frame" x="101.5" y="9.5" width="172.5" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <rect key="frame" x="104.5" y="10.5" width="166.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook_logo" translatesAutoresizingMaskIntoConstraints="NO" id="k6z-6m-6ls">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="40"/>
+                                        <color key="backgroundColor" red="0.23370486497879028" green="0.35343217849731445" blue="0.59890049695968628" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="5le-HD-GEp"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.26084017753601074" green="0.4027484655380249" blue="0.69884943962097168" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.23370486497879028" green="0.35343217849731445" blue="0.59890049695968628" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="OQT-Od-WHD" firstAttribute="centerY" secondItem="dyh-t2-mO3" secondAttribute="centerY" id="0Vr-Hc-YOB"/>
                                     <constraint firstAttribute="height" constant="40" id="1iz-9w-BaR"/>
                                     <constraint firstItem="OQT-Od-WHD" firstAttribute="centerX" secondItem="dyh-t2-mO3" secondAttribute="centerX" id="B9X-p2-iEs"/>
+                                    <constraint firstItem="k6z-6m-6ls" firstAttribute="leading" secondItem="dyh-t2-mO3" secondAttribute="leading" id="Ux7-oY-7zS"/>
+                                    <constraint firstAttribute="bottom" secondItem="k6z-6m-6ls" secondAttribute="bottom" id="ZCx-70-Zt8"/>
+                                    <constraint firstItem="k6z-6m-6ls" firstAttribute="top" secondItem="dyh-t2-mO3" secondAttribute="top" id="p3y-nu-r2w"/>
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="g1Z-1p-XOj">
@@ -81,7 +114,9 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2YS-Uv-X1K">
                                 <rect key="frame" x="311" y="106" width="48" height="30"/>
-                                <state key="normal" title="Search"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" red="0.23370486497879028" green="0.35343217849731445" blue="0.59890049695968628" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="searchBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fxX-bV-eqH"/>
                                 </connections>
@@ -92,15 +127,19 @@
                             <constraint firstItem="dxk-By-1qV" firstAttribute="top" secondItem="wgo-Km-a9f" secondAttribute="bottom" constant="20" id="0b3-0g-Z7B"/>
                             <constraint firstItem="XLo-dx-QwQ" firstAttribute="top" secondItem="dxk-By-1qV" secondAttribute="bottom" constant="20" id="4fH-f7-Ap7"/>
                             <constraint firstItem="g1Z-1p-XOj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7uU-J4-cgZ"/>
+                            <constraint firstItem="pvH-m6-eDS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7zw-yM-Kea"/>
                             <constraint firstItem="ukp-Cp-nHa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8ks-Pi-nwk"/>
                             <constraint firstItem="KCU-uk-zUi" firstAttribute="trailing" secondItem="wgo-Km-a9f" secondAttribute="trailing" id="Dk8-pj-Rwx"/>
+                            <constraint firstItem="pvH-m6-eDS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Gvt-BM-Lmk"/>
                             <constraint firstItem="ukp-Cp-nHa" firstAttribute="top" secondItem="g1Z-1p-XOj" secondAttribute="bottom" constant="50" id="HSE-3E-9XE"/>
                             <constraint firstItem="dyh-t2-mO3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ICw-YI-krr"/>
                             <constraint firstItem="wgo-Km-a9f" firstAttribute="leading" secondItem="ukp-Cp-nHa" secondAttribute="leading" id="Iux-ZU-N0b"/>
                             <constraint firstItem="XLo-dx-QwQ" firstAttribute="trailing" secondItem="wgo-Km-a9f" secondAttribute="trailing" id="Ka5-wi-mld"/>
+                            <constraint firstItem="pvH-m6-eDS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LWn-KD-U95"/>
                             <constraint firstItem="KCU-uk-zUi" firstAttribute="leading" secondItem="wgo-Km-a9f" secondAttribute="leading" id="Nn3-ru-emv"/>
                             <constraint firstItem="dxk-By-1qV" firstAttribute="trailing" secondItem="wgo-Km-a9f" secondAttribute="trailing" id="R8q-wT-UnO"/>
                             <constraint firstItem="XLo-dx-QwQ" firstAttribute="leading" secondItem="wgo-Km-a9f" secondAttribute="leading" id="S66-rh-glj"/>
+                            <constraint firstItem="pvH-m6-eDS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="38" id="TqO-iu-x36"/>
                             <constraint firstItem="wgo-Km-a9f" firstAttribute="trailing" secondItem="ukp-Cp-nHa" secondAttribute="trailing" id="V7f-hJ-UQU"/>
                             <constraint firstItem="EPU-me-IvP" firstAttribute="trailing" secondItem="wgo-Km-a9f" secondAttribute="trailing" id="biJ-cz-1QN"/>
                             <constraint firstItem="KCU-uk-zUi" firstAttribute="top" secondItem="XLo-dx-QwQ" secondAttribute="bottom" constant="20" id="ceK-qM-5I8"/>
@@ -119,18 +158,79 @@
                     </view>
                     <connections>
                         <outlet property="accessTokenText" destination="g1Z-1p-XOj" id="Fek-lX-otg"/>
+                        <outlet property="backgroundImage" destination="AAz-Gg-g4I" id="hEa-7Q-yEG"/>
                         <outlet property="birthDayLabel" destination="dxk-By-1qV" id="lIl-3K-W5f"/>
                         <outlet property="collegeName" destination="KCU-uk-zUi" id="tyk-r2-vAa"/>
                         <outlet property="courseLabel" destination="EPU-me-IvP" id="vd0-e9-B5X"/>
                         <outlet property="nameLabel" destination="wgo-Km-a9f" id="fj1-yD-e9S"/>
                         <outlet property="profilePicture" destination="ukp-Cp-nHa" id="3hK-ag-5iO"/>
                         <outlet property="schoolName" destination="XLo-dx-QwQ" id="dGm-nr-R1H"/>
-                        <outlet property="searchBtn" destination="2YS-Uv-X1K" id="3JN-UH-cZK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="30.134932533733135"/>
+            <point key="canvasLocation" x="-63.200000000000003" y="26.53673163418291"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Trs-rR-1Au">
+            <objects>
+                <viewController id="MLv-nc-od6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zdg-2Q-m4a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WUl-co-NZB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="4G2-ZR-SdI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" alpha="0.5" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tb2-Lr-ozx">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="dE9-Qm-Gma">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzG-Nq-cCB">
+                                                        <rect key="frame" x="106" y="173" width="42" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="portrait_display_nature_trees_fall_leaves_railway_tunnel_red-113430.jpg!d" translatesAutoresizingMaskIntoConstraints="NO" id="f2U-XJ-IK5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </view>
+                                            <color key="backgroundColor" red="0.23370486497879028" green="0.35343217849731445" blue="0.59890049695968628" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <blurEffect style="light"/>
+                                        </visualEffectView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Tb2-Lr-ozx" secondAttribute="trailing" id="1LG-Jl-IbE"/>
+                                        <constraint firstAttribute="bottom" secondItem="Tb2-Lr-ozx" secondAttribute="bottom" id="PlZ-ea-1Ko"/>
+                                        <constraint firstItem="Tb2-Lr-ozx" firstAttribute="top" secondItem="4G2-ZR-SdI" secondAttribute="top" id="YKk-K4-X5S"/>
+                                        <constraint firstItem="Tb2-Lr-ozx" firstAttribute="leading" secondItem="4G2-ZR-SdI" secondAttribute="leading" id="zvT-Jh-J6R"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="1ax-5c-jrn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MHx-xM-PQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="645.60000000000002" y="26.53673163418291"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="facebook_logo" width="720" height="720"/>
+        <image name="portrait_display_nature_trees_fall_leaves_railway_tunnel_red-113430.jpg!d" width="1080" height="1920"/>
+    </resources>
 </document>

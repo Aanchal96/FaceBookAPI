@@ -14,22 +14,39 @@ class ViewController: UIViewController {
     var id = ""
     var boolean = false
     
+    @IBOutlet weak var accessTokenText: UITextField!
+
     @IBOutlet weak var profilePicture: UIImageView!
+    
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var birthDayLabel: UILabel!
     @IBOutlet weak var schoolName: UILabel!
     @IBOutlet weak var collegeName: UILabel!
     @IBOutlet weak var courseLabel: UILabel!
-
-    @IBOutlet weak var accessTokenText: UITextField!
-    
-    @IBOutlet weak var searchBtn: UIButton!
     
     @IBAction func searchBtn(_ sender: Any) {
         
         self.accessToken = self.accessTokenText.text!
-        APIManager().loginGet(accessToken: accessToken){ (fields) in
+        self.getAPI()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+}
+
+extension ViewController{
+    
+    //MARK: --> Calling APIManager
+    func getAPI(){
+        
+        APIManager().login(accessToken: accessToken){ (fields) in
             
             DispatchQueue.main.async{
                 self.id = fields.id
@@ -38,67 +55,35 @@ class ViewController: UIViewController {
                 self.schoolName.text = fields.schoolName
                 self.collegeName.text = fields.collegeName
                 self.courseLabel.text = fields.collegeCource
+                
+                UIView.animate(withDuration: 2.0, animations:{
+                    self.nameLabel.isHidden = self.boolean
+                    self.birthDayLabel.isHidden = self.boolean
+                    self.schoolName.isHidden = self.boolean
+                    self.collegeName.isHidden = self.boolean
+                    self.courseLabel.isHidden = self.boolean
+                    
+                })
 
-                self.nameLabel.isHidden = self.boolean
-                self.birthDayLabel.isHidden = self.boolean
-                self.schoolName.isHidden = self.boolean
-                self.collegeName.isHidden = self.boolean
-                self.courseLabel.isHidden = self.boolean
-          
-                print(self.id)
+                
+                self.getImage()
+            }
         }
-            
     }
-    }
-
+    
     func getImage(){
-        let url = "https://static.wixstatic.com/media/2cd43b_9e40d284910240479b94e37f071f702a~mv2.png/v1/fill/w_196,h_177,al_c,usm_0.66_1.00_0.01/2cd43b_9e40d284910240479b94e37f071f702a~mv2.png"
-        let url2 = NSURL(string: url)
-        let data = NSData(contentsOf: url2! as URL)
-        print("#######")
-        print(data as Any)
-        print(url2!)
-              // self.profilePicture.image = UIImage(data:data! as Data,scale:1.0)
+        self.profilePicture.alpha = 0.0
+        self.profilePicture.layer.cornerRadius = 120
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0), execute: {
+        UIView.animate(withDuration: 1.0, animations:{
+            
+            self.profilePicture.alpha = 1.0
+            self.backgroundImage.alpha = 1.0
 
-//    let url = "https://graph.facebook.com/742056515858366/picture?type=large"
-//    let request = NSMutableURLRequest(url: NSURL(string: url)! as URL,
-//                                                      cachePolicy: .useProtocolCachePolicy,
-//                                                      timeoutInterval: 10.0)
-//                    request.httpMethod = "GET"
-//
-//                    let session = URLSession.shared
-//                    let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-//                        if (error != nil) {
-//                            print("//////")
-//                        }
-//                        else {
-//                            let httpResponse = response as? HTTPURLResponse
-//                            print(httpResponse as Any)
-//                            print(data as Any)
-//
-//                            self.profilePicture.image = UIImage(data: data!)
-//                            }
-//                    })
-//
-//                    dataTask.resume()
-
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //self.accessTokenText.delegate = self
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-}
-
-extension ViewController: UITextFieldDelegate{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.accessTokenText.resignFirstResponder()
-        return true
+            let url = NSURL(string: "https://graph.facebook.com/\(self.id)/picture?type=large")
+            let data = NSData(contentsOf: url! as URL)
+            self.profilePicture.image = UIImage(data:data! as Data,scale:1.0)})
+            self.backgroundImage.image = self.profilePicture.image
+       })
     }
 }
-

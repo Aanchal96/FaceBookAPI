@@ -23,53 +23,21 @@ class NetworkManager{
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             if (error != nil) {
-                print("//////")
+                print("No response retrieved")
                 failure(error!)
             }
             else {
-                guard let url = URL(string: url) else{return}
                 do{
-                            let httpResponse = response as? HTTPURLResponse
-                            print(httpResponse as Any)
-                    let data = try String(contentsOf: url)
-                    let json = JSON(parseJSON: data)
+                    guard let data = data else{return}
+                    let json = try JSON(data: data)
                     success(json)
-                    
-                    ViewController().getImage()
-                    
                 }
                 catch(let error){
                     failure(error)
-                    print("--------")
+                    print("No JSON fetched")
                 }
             }
         })
-        
         dataTask.resume()
     }
-    
-    //POST Request
-    
-    //    func POST(headers: [String:String], url: String, success: @escaping ([String:Any])->()){
-    //
-    //    let request = NSMutableURLRequest(url: NSURL(string: url)! as URL,
-    //                                      cachePolicy: .useProtocolCachePolicy,
-    //                                      timeoutInterval: 10.0)
-    //    request.httpMethod = "POST"
-    //    request.allHTTPHeaderFields = headers
-    //    request.httpBody = postData as Data
-    //
-    //    let session = URLSession.shared
-    //    let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-    //        if (error != nil) {
-    //            print(error)
-    //        } else {
-    //            let httpResponse = response as? HTTPURLResponse
-    //            print(httpResponse)
-    //        }
-    //    })
-    //
-    //    dataTask.resume()
-    //}
 }
-
