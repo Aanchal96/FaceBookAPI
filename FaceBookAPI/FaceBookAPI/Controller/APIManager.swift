@@ -15,7 +15,7 @@ class APIManager {
             "Cache-Control": "no-cache",
             "Postman-Token": "cbfe886a-1c41-4c9e-b36c-97001a446eb1"
         ]
-        
+    
         let baseURL = "https://graph.facebook.com/v2.12/me?fields=id%2Cname%2Cbirthday%2Ceducation&access_token=\(accessToken)"
         
         NetworkManager().GET(headers: headers, url: baseURL, success:{ (data) in
@@ -24,4 +24,3 @@ class APIManager {
         { error in print(Error.self)}
     }
 }
-
