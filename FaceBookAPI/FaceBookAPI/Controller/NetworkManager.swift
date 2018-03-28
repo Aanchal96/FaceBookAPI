@@ -10,7 +10,7 @@ import Foundation
 
 class NetworkManager{
     
-    // GET Request
+    //MARK: --> GET Request
     
     func GET(headers: [String:String], url: String, success: @escaping (JSON)->(), failure: @escaping(Error) -> Void){
         let request = NSMutableURLRequest(url: NSURL(string: url)! as URL,

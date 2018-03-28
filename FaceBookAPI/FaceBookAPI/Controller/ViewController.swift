@@ -10,24 +10,33 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //MARK: --> Variable Declaration
     var accessToken = ""
     var id = ""
     var boolean = false
     
+    //MARK: --> Outlets
     @IBOutlet weak var accessTokenText: UITextField!
+    
     @IBOutlet weak var profilePicture: UIImageView!
+    
     @IBOutlet weak var backgroundImage: UIImageView!
+    
     @IBOutlet weak var nameLabel: UILabel!
+    
     @IBOutlet weak var birthDayLabel: UILabel!
+    
     @IBOutlet weak var schoolName: UILabel!
+    
     @IBOutlet weak var collegeName: UILabel!
+    
     @IBOutlet weak var courseLabel: UILabel!
+    
     @IBAction func searchBtn(_ sender: Any) {
-        
         self.accessToken = self.accessTokenText.text!
         self.getAPI()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -65,6 +74,7 @@ extension ViewController{
         }
     }
     
+    //MARK: --> Getting profile picture
     func getImage(){
         var alpha:CGFloat = 0.0
         self.profilePicture.alpha = alpha
@@ -75,23 +85,23 @@ extension ViewController{
         self.schoolName.alpha = alpha
         self.collegeName.alpha = alpha
         self.courseLabel.alpha = alpha
-
+        
         self.profilePicture.layer.cornerRadius = 120
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0), execute: {
-        UIView.animate(withDuration: 1.0, animations:{
-            alpha = 1.0
-            self.profilePicture.alpha = alpha
-            self.backgroundImage.alpha = alpha
-            self.nameLabel.alpha = alpha
-            self.birthDayLabel.alpha = alpha
-            self.schoolName.alpha = alpha
-            self.collegeName.alpha = alpha
-            self.courseLabel.alpha = alpha
-
-            let url = NSURL(string: "https://graph.facebook.com/\(self.id)/picture?type=large")
-            let data = NSData(contentsOf: url! as URL)
-            self.profilePicture.image = UIImage(data:data! as Data,scale:1.0)})
+            UIView.animate(withDuration: 1.0, animations:{
+                alpha = 1.0
+                self.profilePicture.alpha = alpha
+                self.backgroundImage.alpha = alpha
+                self.nameLabel.alpha = alpha
+                self.birthDayLabel.alpha = alpha
+                self.schoolName.alpha = alpha
+                self.collegeName.alpha = alpha
+                self.courseLabel.alpha = alpha
+                
+                let url = NSURL(string: "https://graph.facebook.com/\(self.id)/picture?type=large")
+                let data = NSData(contentsOf: url! as URL)
+                self.profilePicture.image = UIImage(data:data! as Data,scale:1.0)})
             self.backgroundImage.image = self.profilePicture.image
-       })
+        })
     }
 }

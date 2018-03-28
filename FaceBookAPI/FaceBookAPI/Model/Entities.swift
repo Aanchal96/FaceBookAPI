@@ -8,6 +8,7 @@
 
 import Foundation
 struct Entitites{
+    
     let id: String
     let name: String
     let birthDay: String
@@ -24,4 +25,3 @@ struct Entitites{
         self.collegeCource = fields["education"][1]["concentration"][0]["name"].string ?? "-------"
     }
 }
-
